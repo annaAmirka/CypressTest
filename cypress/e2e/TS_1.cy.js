@@ -74,5 +74,4 @@ describe("SignIn", () => {
   cy.url().should('include', 'parabank/register.htm');
  });
 
-
 });

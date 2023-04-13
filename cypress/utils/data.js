@@ -19,3 +19,14 @@ export const signUpData = {
   Password: "141516",
   Confirm: "141516",
 };
+
+export const ForgotLogInPageData = {
+  FirstName: "Anna",
+  LastName: "Smith",
+  Address: "Amiryan 6",
+  City: "Yerevan",
+  State: "Armenia",
+  Zipcode: "1223",
+  Phone: "333666478",
+  SSN: "45436541",
+}
