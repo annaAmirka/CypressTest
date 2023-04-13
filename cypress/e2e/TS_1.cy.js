@@ -3,11 +3,11 @@ import { data } from "../utils/data";
 import { validationMessages } from "../utils/messages";
 
 describe("SignIn", () => {
-  it("Verify login functionality with valid credentials", () => {
-    cy.login();
+  it.only("Verify login functionality with valid credentials", () => {
+    cy.loginPage();
     cy.wait(3000);
-    // loginPage.visit();
-    // //read once more about should assertion
+    //git loginPage.visit();
+    //read once more about should assertion
     // loginPage
     //   .getloginForm()
     //   .should("contain", "Username")
