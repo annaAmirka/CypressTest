@@ -30,3 +30,11 @@ export const ForgotLogInPageData = {
   Phone: "333666478",
   SSN: "45436541",
 }
+
+export const RegistrationuserName= { 
+ userName: "Annita",
+ emil: "anna_amirk@yahoo.it",
+ Password:"141516",
+ password: "12345",
+}
+
