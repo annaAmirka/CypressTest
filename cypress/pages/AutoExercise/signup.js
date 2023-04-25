@@ -1,36 +1,87 @@
-class signUp {
-   
-    visit(endpoint) {
-       return  cy.visit(Cypress.env('globalUrl')+endpoint);
-      }
-    
-     getUserName() {
-        return cy.get('[data-qa="signUp-name"]');
-      }
-     getEmail() {
-        return cy.get('[data-qa="signUp-email"]')
-     }
-      getPassword() {
-        return cy.get('[data-qa="password"]');
-      }
-    
-      submit() {
-        return cy.get('[data-qa="signUp-button"]');
-      }
-      
-      generateRandomName(length,email=''){
-        let result = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const charactersLength = characters.length;
-        let counter = 0;
-        while (counter < length) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength));
-          counter += 1;
-        }
-        return `test${result}${email}`;
-  
-      }
+class signUp  {
+  visit (endpoint) {
+  cy.visit(Cypress.env('globalUrl')+endpoint);
+};
+
+   getUserName() {
+   return cy.get('[data-qa="signup-name"]');
+ };
+
+  getEmail() {
+  return cy.get('[data-qa="signup-email"]');
+  }
+
+  submit() {
+    return cy.get('[data-qa="signup-button"]');
   }
 
 
-  export const signup = new signUp();
+generateRandomName(length,email=''){
+let result = '';
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const charactersLength = characters.length;
+let counter = 0;
+while (counter < length) {
+result += characters.charAt(Math.floor(Math.random() * charactersLength));
+counter += 1;
+}
+return `test${result}${email}`;
+};
+
+getGender() {
+  return cy.get("#id_gender1");
+}
+getPassword() {
+ return cy.get('[data-qa="password"]');
+};
+getPassword() {
+  return cy.get('[data-qa="password"]');
+}
+getDayofBirth() {
+  return cy.get('[data-qa="days"]');
+}
+getDateofMonth() {
+  return cy.get('[data-qa="months"]');
+}
+getDateofYear() {
+  return cy.get('[data-qa="years"]');
+}
+getourNewsLetter() {
+  return cy.get("#newsletter");
+}
+getOptin() {
+  return cy.get("#optin");
+}
+getFirst_name() {
+  return cy.get('[data-qa="first_name"]');
+}
+getLast_name() {
+  return cy.get('[data-qa="last_name"]');
+}
+getCompany() {
+  return cy.get('[data-qa="company"]');
+}
+getAddress() {
+  return cy.get('[data-qa="address"]');
+}
+getCountry() {
+  return cy.get('[data-qa="country"]');
+}
+getState() {
+  return cy.get('[data-qa="state"]');
+}
+getCity() {
+  return cy.get('[data-qa="city"]');
+}
+getZipcode() {
+  return cy.get('[data-qa="zipcode"]');
+}
+getMobileNumber() {
+  return cy.get('[data-qa="mobile_number"]');
+}
+getCreateAccount() {
+  return cy.get('[data-qa="create-account"]');
+};
+};
+
+export const registration = new signUp()
