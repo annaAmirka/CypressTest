@@ -12,5 +12,8 @@
     "cypress": "^12.9.0",
     "cypress-dotenv": "^2.0.0",
     "dotenv": "^16.0.3"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.7.6"
   }
 }
