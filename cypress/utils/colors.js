@@ -10,3 +10,10 @@ const inputs = {
     addCartTitlecolor: "rgb(105, 103, 99)",
     viewProductColor: "rgb(165, 42, 42)"
   }
+
+
+ const mycolors = {
+ 
+ backgroundColor: "rgb(128,203,121)",
+
+ }
