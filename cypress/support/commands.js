@@ -1,11 +1,5 @@
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-// -- This is a parent command --
+//import {bodyData} from "../fixtures/bodyData.json"
+//import {bodyDataPosts} from "../fixtures/bodyDataPosts.json"
 
 Cypress.Commands.add('login', (email, password) => { 
   
@@ -28,6 +22,44 @@ Cypress.Commands.add('generateRandomName', (length) => {
 Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { 
 
 })
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getComments',() => {
+  cy.fixture("CommentObjSample").then((payload) => {
+    cy.request({
+      method: "GET",
+      url: "https://jsonplaceholder.typicode.com/posts/1/comments"
+    }).then(() => {
+    
+    });
+  });
+})
+
+
+Cypress.Commands.add(
+  "addNewPost",
+  (newBodyData=bodyData) => {
+    cy.fixture("bodyDataPosts").then(() => {
+        cy.request({
+        method: "POST",
+        url: "https://jsonplaceholder.typicode.com/posts",
+        failOnStatusCode: false,
+         body: newBodyData,
+      }).then((resp) => {
+        cy.log(resp)
+      });
+    });
+  }
+);
+
+
+Cypress.Commands.add ('randomName', (length) => {
+  let result = ''
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  const charactersLength = characters.length
+  let count=0
+  while (count < length) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength))
+    count +=1
+  }
+  return result
+}) 

@@ -14,6 +14,16 @@ it("Loads the Products and check for icons", () => {
 });
 
 it("Loads the Cart", () => {
-  cy.visit("https://automationexercise.com/view_cart");
+  cy.visit(Cypress.env("globalUrl") + "carts")
   cy.get(".shop-menu > .nav > :nth-child(3) > a").click;
+});
+
+it("Loads the Signup/Login and checks for the icons", () => {
+  cy.visit("https://automationexercise.com/login");
+  cy.get(".nav > :nth-child(7)").click;
+  cy.url().should("include", "/");
+
+
+
+
 });
